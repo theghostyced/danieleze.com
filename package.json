@@ -1,19 +1,36 @@
 {
-  "name": "@example/basics",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "devDependencies": {
-    "@astrojs/react": "^1.1.0",
-    "@astrojs/tailwind": "^1.0.0",
-    "astro": "^1.1.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+	"name": "@example/basics",
+	"version": "0.0.1",
+	"private": true,
+	"engines": {
+		"node": ">=14.0.0",
+		"yarn": ">=1.22.0",
+		"npm": "please-use-yarn"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"prepare": "husky install",
+		"astro": "astro"
+	},
+	"devDependencies": {
+		"@astrojs/react": "^1.1.0",
+		"@astrojs/tailwind": "^1.0.0",
+		"astro": "^1.1.1",
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"dependencies": {
+		"@astrojs/netlify": "^1.0.2"
+	},
+	"lint-staged": {
+		"*.{tsx,ts,js,css,json,md}": [
+			"prettier --write"
+		]
+	}
 }
