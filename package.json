@@ -12,12 +12,15 @@
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
+		"prettier": "prettier --write .",
 		"prepare": "husky install",
 		"astro": "astro"
 	},
 	"devDependencies": {
 		"@astrojs/react": "^1.1.0",
 		"astro": "^1.1.1",
+		"autoprefixer": "^10.4.8",
+		"cssnano": "^5.1.13",
 		"husky": "^8.0.1",
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",

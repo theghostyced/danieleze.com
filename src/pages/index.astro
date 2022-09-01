@@ -1,9 +1,9 @@
 ---
-import Layout from '~/layouts/Layout.astro';
+import PageLayout from '~/layouts/PageLayout.astro';
 import Card from '~/components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<PageLayout title="Welcome to Astro.">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
 		<p class="instructions font-bold">
@@ -33,7 +33,7 @@ import Card from '~/components/Card.astro';
 			/>
 		</ul>
 	</main>
-</Layout>
+</PageLayout>
 
 <style>
 	:root {
@@ -42,6 +42,7 @@ import Card from '~/components/Card.astro';
 
 	h1 {
 		margin: 2rem 0;
+		color: #fff;
 	}
 
 	main {
