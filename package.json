@@ -29,7 +29,7 @@
 		"@astrojs/netlify": "^1.0.2"
 	},
 	"lint-staged": {
-		"*.{tsx,ts,js,css,json,md}": [
+		"*.{tsx,ts,js,css,json,md,astro}": [
 			"prettier --write"
 		]
 	}
