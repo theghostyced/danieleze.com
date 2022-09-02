@@ -35,5 +35,11 @@
 		"*.{tsx,ts,js,css,json,md,astro}": [
 			"prettier --write"
 		]
-	}
+	},
+	"keywords": [
+		"astro",
+		"astrojs",
+		"portfolio",
+		"website"
+	]
 }

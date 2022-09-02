@@ -1,0 +1,22 @@
+
+// base
+// ---------------------------------------------------------
+//
+// Set the stage for your site with fonts, custom properties,
+// base styles, and a reset.
+//
+// ---------------------------------------------------------
+
+@use '_1_foundation/reset';
+@use '_1_foundation/properties';
+
+
+// layout
+// ---------------------------------------------------------
+//
+// A large portion of CSS is structural layout. You will use
+// these helpers to create the scaffolding that will support
+// the elements that make up your site.
+//
+// ---------------------------------------------------------
+@use '_2_layout/container';

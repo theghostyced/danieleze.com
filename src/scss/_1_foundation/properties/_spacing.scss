@@ -1,0 +1,15 @@
+@use '../../lib/media-queries' as *;
+
+:root {
+	--maxwidth: 85vw;
+
+	/* Spacing */
+	@media #{query('l')} {
+    --space-0: 0.25rem;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 2rem;
+    --space-4: 4rem;
+    --space-5: 8rem;
+  }
+}
