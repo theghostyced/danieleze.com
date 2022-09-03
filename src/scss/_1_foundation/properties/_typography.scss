@@ -44,37 +44,61 @@
 }
 
 @mixin type-headline {
-  font-size: var(--fz-headline);
-  line-height: var(--lh-headline);
-  letter-spacing: var(--ls-headline);
+	font-size: var(--fz-headline);
+	line-height: var(--lh-headline);
+	letter-spacing: var(--ls-headline);
 }
 
 @mixin type-headline-s {
-  font-size: var(--fz-headline-s);
-  line-height: var(--lh-headline-s);
-  letter-spacing: var(--ls-headline-s);
+	font-size: var(--fz-headline-s);
+	line-height: var(--lh-headline-s);
+	letter-spacing: var(--ls-headline-s);
 }
 
 @mixin type-subhead {
-  font-size: var(--fz-subhead);
-  line-height: var(--lh-subhead);
-  letter-spacing: var(--ls-subhead);
+	font-size: var(--fz-subhead);
+	line-height: var(--lh-subhead);
+	letter-spacing: var(--ls-subhead);
 }
 
 @mixin type-subhead-s {
-  font-size: var(--fz-subhead-s);
-  line-height: var(--lh-subhead-s);
-  letter-spacing: var(--ls-subhead-s);
+	font-size: var(--fz-subhead-s);
+	line-height: var(--lh-subhead-s);
+	letter-spacing: var(--ls-subhead-s);
 }
 
 @mixin type-tag {
-  font-size: var(--fz-tag);
-  line-height: var(--lh-tag);
-  letter-spacing: var(--ls-tag);
+	font-size: var(--fz-tag);
+	line-height: var(--lh-tag);
+	letter-spacing: var(--ls-tag);
 }
 
 @mixin type-body {
-  font-size: var(--fz-body);
-  line-height: var(--lh-body);
-  letter-spacing: var(--ls-body);
+	font-size: var(--fz-body);
+	line-height: var(--lh-body);
+	letter-spacing: var(--ls-body);
+}
+
+.type-headline {
+	@include type-headline;
+}
+
+.type-headline-s {
+	@include type-headline-s;
+}
+
+.type-subhead {
+	@include type-subhead;
+}
+
+.type-subhead-s {
+	@include type-subhead-s;
+}
+
+.type-tag {
+	@include type-tag;
+}
+
+.type-body {
+	@include type-body;
 }
