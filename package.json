@@ -29,7 +29,9 @@
 		"sass": "^1.54.8"
 	},
 	"dependencies": {
-		"@astrojs/netlify": "^1.0.2"
+		"@astrojs/netlify": "^1.0.2",
+		"@nanostores/react": "^0.3.0",
+		"nanostores": "^0.6.0"
 	},
 	"lint-staged": {
 		"*.{tsx,ts,js,css,json,md,astro}": [

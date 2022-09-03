@@ -1,0 +1,80 @@
+@use 'sass:math';
+@use '../../lib/units' as *;
+@use '../../lib/media-queries' as *;
+
+:root {
+	--fz-headline: #{rem(40)};
+	--lh-headline: #{math.div(48, 40)};
+	--ls-headline: -0.03em;
+
+	--fz-headline-s: #{rem(36)};
+	--lh-headline-s: #{math.div(44, 36)};
+	--ls-headline-s: -0.03em;
+
+	--fz-subhead: #{rem(36)};
+	--lh-subhead: #{math.div(41, 36)};
+	--ls-subhead: -0.02em;
+	--fz-subhead-s: #{rem(24)};
+	--lh-subhead-s: #{math.div(29, 24)};
+	--ls-subhead-s: -0.02em;
+
+	--fz-tag: #{rem(18)};
+	--lh-tag: #{math.div(24, 18)};
+	--ls-tag: -0.02em;
+
+	--fz-body: #{rem(16)};
+	--lh-body: #{math.div(19, 16)};
+	--ls-body: -0.01em;
+
+	@media #{query('l')} {
+		--fz-headline: #{rem(85)};
+		--lh-headline: #{math.div(102, 85)};
+
+		--fz-headline-s: #{rem(75)};
+		--lh-headline-s: #{math.div(90, 75)};
+
+		--fz-subhead: #{rem(36)};
+		--lh-subhead: #{math.div(41, 36)};
+		--fz-subhead-s: #{rem(30)};
+		--lh-subhead-s: #{math.div(36, 30)};
+
+		--fz-tag: #{rem(24)};
+		--lh-tag: #{math.div(28, 24)};
+	}
+}
+
+@mixin type-headline {
+  font-size: var(--fz-headline);
+  line-height: var(--lh-headline);
+  letter-spacing: var(--ls-headline);
+}
+
+@mixin type-headline-s {
+  font-size: var(--fz-headline-s);
+  line-height: var(--lh-headline-s);
+  letter-spacing: var(--ls-headline-s);
+}
+
+@mixin type-subhead {
+  font-size: var(--fz-subhead);
+  line-height: var(--lh-subhead);
+  letter-spacing: var(--ls-subhead);
+}
+
+@mixin type-subhead-s {
+  font-size: var(--fz-subhead-s);
+  line-height: var(--lh-subhead-s);
+  letter-spacing: var(--ls-subhead-s);
+}
+
+@mixin type-tag {
+  font-size: var(--fz-tag);
+  line-height: var(--lh-tag);
+  letter-spacing: var(--ls-tag);
+}
+
+@mixin type-body {
+  font-size: var(--fz-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+}

@@ -1,12 +1,17 @@
 // Light mode
 :root {
-  --color-white: #FFFFFF;
-  --color-black: #000000;
+	--color-white: #ffffff;
+	--color-black: #18181b;
+	--color-grey: #8b8b8d;
 
 	--color-bg: var(--color-white);
+	--color-text: var(--color-black);
+	--color-grey-line: #464649;
 }
 
 // Dark mode
 html[class*='dark'] {
-	--bg: var(--color-black);
+	--color-bg: var(--color-black);
+	--color-text: var(--color-white);
+	--color-grey-line: #ececed;
 }
