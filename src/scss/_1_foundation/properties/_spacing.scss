@@ -1,5 +1,5 @@
-@use '../../lib/media-queries' as *;
-@use '../../lib/units' as *;
+@use 'lib/media-queries' as *;
+@use 'lib/units' as *;
 
 :root {
 	--maxwidth: 85vw;

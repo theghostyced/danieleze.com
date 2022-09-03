@@ -1,6 +1,6 @@
 @use 'sass:math';
-@use '../../lib/units' as *;
-@use '../../lib/media-queries' as *;
+@use 'lib/units' as *;
+@use 'lib/media-queries' as *;
 
 :root {
 	--fz-headline: #{rem(40)};

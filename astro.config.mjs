@@ -7,4 +7,13 @@ export default defineConfig({
 	output: 'server',
 	integrations: [react()],
 	adapter: netlify(),
+	vite: {
+		css: {
+			preprocessorOptions: {
+				scss: {
+					includePaths: ['./src/scss'],
+				},
+			},
+		},
+	},
 });
