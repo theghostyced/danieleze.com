@@ -1,15 +1,51 @@
 @use '../../lib/media-queries' as *;
+@use '../../lib/units' as *;
 
 :root {
 	--maxwidth: 85vw;
+	--vp-h: 100vh;
 
 	/* Spacing */
+	--space-fixed-c: #{rem(32)};
+	--space-fixed-b: #{rem(16)};
+	--space-fixed-a: #{rem(4)};
+	--space-0: #{rem(8)};
+	--space-1: #{rem(12)};
+	--space-2: #{rem(16)};
+	--space-3: #{rem(24)};
+	--space-4: #{rem(48)};
+	--space-5: #{rem(64)};
+
+	@media #{query('m')} {
+		--space-0: #{rem(12)};
+		--space-1: #{rem(16)};
+		--space-2: #{rem(24)};
+		--space-3: #{rem(36)};
+		--space-4: #{rem(72)};
+		--space-5: #{rem(96)};
+	}
+
 	@media #{query('l')} {
-    --space-0: 0.25rem;
-    --space-1: 0.5rem;
-    --space-2: 1rem;
-    --space-3: 2rem;
-    --space-4: 4rem;
-    --space-5: 8rem;
-  }
+		--space-0: #{rem(16)};
+		--space-1: #{rem(24)};
+		--space-2: #{rem(32)};
+		--space-3: #{rem(48)};
+		--space-4: #{rem(96)};
+		--space-5: #{rem(128)};
+	}
+}
+
+//
+// for android chrome
+//
+html[data-useragent*='Mobile Safari'] {
+	--vp-h: calc(100vh - 55px);
+}
+
+//
+// for iOS
+//
+html[data-useragent*='iPhone'][data-useragent*='Safari'],
+html[data-useragent*='iPad'][data-useragent*='Safari'] {
+	--vp-h: -webkit-fill-available;
 }

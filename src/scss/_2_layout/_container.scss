@@ -1,0 +1,11 @@
+@use '../lib//units' as *;
+
+.container {
+	max-width: var(--maxwidth);
+	margin-inline: auto;
+	width: min(95vw, #{rem(1440)});
+}
+
+.v-spacing {
+  padding: var(--space-4) 0;
+}

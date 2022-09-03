@@ -1,0 +1,12 @@
+// Light mode
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+	--color-bg: var(--color-white);
+}
+
+// Dark mode
+html[class*='dark'] {
+	--bg: var(--color-black);
+}

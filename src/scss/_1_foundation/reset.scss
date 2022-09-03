@@ -7,10 +7,9 @@
 //
 // ---------------------------------------------------------
 
-@viewport { width: device-width; }
-
-
-
+@viewport {
+	width: device-width;
+}
 
 // --------------------------------------------------------
 //
@@ -20,11 +19,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
-
-
-
 
 // --------------------------------------------------------
 //
@@ -33,11 +29,8 @@
 // --------------------------------------------------------
 ul,
 ol {
-  padding: 0;
+	padding: 0;
 }
-
-
-
 
 // --------------------------------------------------------
 //
@@ -56,33 +49,37 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+	margin: 0;
 }
 
-
-
+h1,
+h2,
+h3,
+h4,
+p {
+	overflow-wrap: break-word;
+}
 
 // --------------------------------------------------------
 //
 // Set core body defaults
 //
 // --------------------------------------------------------
-html {
-    scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  line-height: 1.5;
-  min-height: 100%;
-  text-rendering: optimizeSpeed;
-  font-size: 16px;
-  letter-spacing: -0.01em;
-  margin: 0;
+	font-family: 'Inter', system-ui, sans-serif;
+	line-height: 1.5;
+	min-height: var(--vp-h);
+	text-rendering: optimizeSpeed;
+	font-size: 16px;
+	letter-spacing: -0.01em;
+	margin: 0;
 }
-
-
-
 
 // --------------------------------------------------------
 //
@@ -92,11 +89,8 @@ body {
 // --------------------------------------------------------
 ul[class],
 ol[class] {
-  list-style: none;
+	list-style: none;
 }
-
-
-
 
 // --------------------------------------------------------
 //
@@ -104,11 +98,8 @@ ol[class] {
 //
 // --------------------------------------------------------
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+	text-decoration-skip-ink: auto;
 }
-
-
-
 
 // --------------------------------------------------------
 //
@@ -122,11 +113,8 @@ select,
 textarea,
 label,
 summary {
-  touch-action: manipulation;
+	touch-action: manipulation;
 }
-
-
-
 
 // --------------------------------------------------------
 //
@@ -135,17 +123,14 @@ summary {
 // --------------------------------------------------------
 img,
 video {
-  display: block;
-  height: auto;
-  max-width: 100%;
+	display: block;
+	height: auto;
+	max-width: 100%;
 }
 
 video {
-  width: 100%;
+	width: 100%;
 }
-
-
-
 
 // --------------------------------------------------------
 //
@@ -162,11 +147,8 @@ h3,
 h4,
 h5,
 h6 {
-  font: inherit;
+	font: inherit;
 }
-
-
-
 
 // --------------------------------------------------------
 //
@@ -175,11 +157,20 @@ h6 {
 //
 // --------------------------------------------------------
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
 }
 /* stylelint-enable */
+
+// --------------------------------------------------------
+//
+// Paragraph
+//
+// --------------------------------------------------------
+p {
+	margin: 0 0 var(--space-1);
+}
