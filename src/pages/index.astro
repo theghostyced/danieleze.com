@@ -3,8 +3,60 @@ import PageLayout from '~/layouts/PageLayout.astro';
 ---
 
 <PageLayout title="Daniel Eze">
-	<main class="container v-spacing">
-		<p>Content goes here</p>
+	<main id="main">
+		<section class="hero v-spacing">
+			<div class="container grid">
+				<div class="hero__content">
+					<h1 class="hero__title type-subhead">Hi, I’m Daniel.</h1>
+					<p>
+						I’m an <strong
+							>independent inclusive design engineer, author, speaker, and
+							trainer</strong
+						> based in Lebanon. I love the Web platform and I want to make it better
+						for everyone. And I consider myself to be completely blessed that I get
+						to build it for a living.
+					</p>
+					<p>
+						I have a Bachelor’s Degree in Computer Sciences, and have been doing
+						what I do since 2013, when I started my freelance career, as well as
+						published my first ever blog post on this site!
+					</p>
+					<p>
+						I work with companies and agencies around the world, building Web
+						user interfaces, design systems, and digital products with focus on
+						responsive design, accessibility, performance, and cutting-edge
+						tech. I’ve worked with teams at companies like <strong
+							>SuperFriendly</strong
+						>, <strong>Herman Miller</strong>, <strong>Khan Academy</strong>, <strong
+							>Bosch</strong
+						>, and more.
+					</p>
+					<p>
+						I also speak and run workshops across the globe, covering practical
+						insights and tried and true practices for building scalable,
+						resilient front-end foundations. Since 2014, I’ve presented and
+						delivered Keynotes at dozens of events worldwide, and have led
+						workshops at conferences, as well as in-house for companies like <strong
+							>Netflix</strong
+						>, <strong>Telus</strong>, and the <strong
+							>Royal Schiphol Group at Amsterdam Airport</strong
+						>.
+					</p>
+					<p>
+						<!-- I've worked with companies across the globe. companies i'd love to work with someday are: national geographic, disney, -->
+					</p>
+					<p>
+						I wrote the <a href="https://tympanus.net/codrops/css_reference/"
+							>Codrops CSS Reference</a
+						>, and co-authored the <a
+							href="https://www.smashingmagazine.com/2015/03/real-life-responsive-web-design-smashing-book-5/"
+							>Smashing Book 5</a
+						> — a book that covers time-saving, practical techniques for crafting
+						fast, maintainable and scalable responsive websites.
+					</p>
+				</div>
+			</div>
+		</section>
 		<!-- <svg
     width="181"
     height="67"
@@ -18,3 +70,22 @@ import PageLayout from '~/layouts/PageLayout.astro';
   </svg> -->
 	</main>
 </PageLayout>
+
+<style lang="scss">
+	@use 'lib/media-queries' as *;
+	.hero__title {
+		color: var(--color-text);
+		font-weight: 600;
+		margin-block-end: 0.5em;
+		font-size: 44px;
+		line-height: 1.2;
+	}
+
+	.hero__content {
+		grid-column: 1/8;
+
+		@media #{query('l')} {
+			grid-column: 1/5;
+		}
+	}
+</style>
