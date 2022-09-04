@@ -22,6 +22,10 @@
 	--lh-tag: #{math.div(24, 18)};
 	--ls-tag: -0.02em;
 
+  --fz-nav: #{rem(18)};
+	--lh-nav: #{math.div(27, 18)};
+	--ls-nav: -0.01em;
+
 	--fz-body: #{rem(16)};
 	--lh-body: #{math.div(19, 16)};
 	--ls-body: -0.01em;
@@ -73,6 +77,12 @@
 	letter-spacing: var(--ls-tag);
 }
 
+@mixin type-nav {
+	font-size: var(--fz-nav);
+	line-height: var(--lh-nav);
+	letter-spacing: var(--ls-nav);
+}
+
 @mixin type-body {
 	font-size: var(--fz-body);
 	line-height: var(--lh-body);
@@ -97,6 +107,10 @@
 
 .type-tag {
 	@include type-tag;
+}
+
+.type-nav {
+	@include type-nav;
 }
 
 .type-body {

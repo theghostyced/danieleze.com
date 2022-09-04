@@ -1,17 +1,20 @@
 // Light mode
 :root {
-	--color-white: #ffffff;
-	--color-black: #18181b;
-	--color-grey: #8b8b8d;
+	--color-white: hsl(0, 0%, 100%);
+	--color-black: hsl(240, 6%, 10%);
+	--color-grey: hsl(240, 1%, 55%);
 
 	--color-bg: var(--color-white);
 	--color-text: var(--color-black);
-	--color-grey-line: #464649;
+	--color-grey-line: hsl(240, 2%, 28%);
+
+  --color-nav-text: hsl(240, 6%, 50%);
 }
 
 // Dark mode
 html[class*='dark'] {
 	--color-bg: var(--color-black);
 	--color-text: var(--color-white);
-	--color-grey-line: #ececed;
+	--color-grey-line: hsl(240, 3%, 93%);
+  --color-nav-text: hsl(240, 6%, 55%);
 }

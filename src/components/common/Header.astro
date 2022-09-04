@@ -4,7 +4,22 @@
 <header id="site-header" class="site-header">
 	<div class="container">
 		<a class="logo type-tag" aria-label="home" href="/">Daniel C. Eze</a>
-		<nav class="site-nav" aria-label="main-nav">Navitem here</nav>
+		<nav class="site-nav" aria-label="main-nav">
+			<ul class="site-nav__list" role="list">
+				<li>
+					<a class="type-nav" href="/">About</a>
+				</li>
+				<li>
+					<a class="type-nav" href="/">Desk</a>
+				</li>
+				<li>
+					<a class="type-nav" href="/">Blog</a>
+				</li>
+				<li>
+					<a class="type-nav" href="/">Contact</a>
+				</li>
+			</ul>
+		</nav>
 	</div>
 </header>
 
@@ -20,13 +35,48 @@
 		align-items: center;
 	}
 
-	.site-nav {
-		justify-self: flex-end;
-	}
-
 	.logo {
 		color: var(--color-text);
 		font-weight: 600;
 		text-decoration: none;
+	}
+
+	.site-nav {
+		justify-self: flex-end;
+	}
+
+	.site-nav__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-fixed-a) var(--space-fixed-c);
+	}
+
+	.site-nav__list a {
+		color: var(--color-nav-text);
+		text-decoration: none;
+		font-weight: 500;
+		position: relative;
+
+		&:hover {
+			color: var(--color-text);
+		}
+
+		&::after {
+			bottom: -4px;
+			content: '';
+			display: block;
+			height: 2px;
+			left: 0;
+			position: absolute;
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 0.25s ease;
+			width: 100%;
+			background-color: currentColor;
+		}
+
+		&:hover::after {
+			transform: scaleX(1);
+		}
 	}
 </style>
