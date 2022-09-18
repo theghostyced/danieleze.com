@@ -3,22 +3,20 @@
 
 <header id="site-header" class="site-header">
 	<div class="container">
-		<a class="logo type-tag" aria-label="home" href="/">
-			<img src="/me-white.svg" alt="my portrait" />
-		</a>
+		<a class="logo type-tag" aria-label="home" href="/"> Daniel C. Eze</a>
 		<nav class="site-nav" aria-label="main-nav">
 			<ul class="site-nav__list" role="list">
 				<li>
-					<a class="type-nav" href="/">About</a>
+					<a class="site-nav__item type-nav" href="/">About</a>
 				</li>
 				<li>
-					<a class="type-nav" href="/">Desk</a>
+					<a class="site-nav__item type-nav" href="/">Desk</a>
 				</li>
 				<li>
-					<a class="type-nav" href="/">Blog</a>
+					<a class="site-nav__item type-nav" href="/">Blog</a>
 				</li>
 				<li>
-					<a class="type-nav" href="/">Contact</a>
+					<a class="site-nav__item type-nav" href="/">Contact</a>
 				</li>
 			</ul>
 		</nav>
@@ -27,7 +25,7 @@
 
 <style lang="scss">
 	.site-header {
-		padding: var(--space-fixed-b) 0;
+		padding: var(--space-fixed-c) 0;
 	}
 
 	.site-header .container {
@@ -41,7 +39,6 @@
 		color: var(--color-text);
 		font-weight: 600;
 		text-decoration: none;
-		width: 100px;
 	}
 
 	.site-nav {
@@ -54,7 +51,7 @@
 		gap: var(--space-fixed-a) var(--space-fixed-c);
 	}
 
-	.site-nav__list a {
+	.site-nav__item {
 		color: var(--color-nav-text);
 		text-decoration: none;
 		font-weight: 500;
