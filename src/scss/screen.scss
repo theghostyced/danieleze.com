@@ -8,6 +8,7 @@
 
 @use '_1_foundation/reset';
 @use '_1_foundation/properties';
+@use '_1_foundation/hide';
 
 // layout
 // ---------------------------------------------------------
@@ -19,3 +20,14 @@
 // ---------------------------------------------------------
 @use '_2_layout/container';
 @use '_2_layout/grid';
+@use '_2_layout/header';
+
+// element
+// ---------------------------------------------------------
+//
+// A large portion of CSS is structural layout. You will use
+// these helpers to create the scaffolding that will support
+// the elements that make up your site.
+//
+// ---------------------------------------------------------
+@use '_3_elements/button';
