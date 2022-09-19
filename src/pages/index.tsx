@@ -8,7 +8,7 @@ const Home: NextPage = () => {
 				<section className="hero v-spacing">
 					<div className="container grid">
 						<div className="hero__content">
-							<h1 className="hero__title type-subhead">Hi, I’m Daniel.</h1>
+							<h1 className="hero__title type-headline">Hi, I’m Daniel.</h1>
 						</div>
 					</div>
 				</section>

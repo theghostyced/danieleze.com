@@ -3,7 +3,7 @@ import {motion, useMotionValue, useTransform} from 'framer-motion';
 import {useTheme} from '~/providers/ThemeProvider';
 
 const LightDarkSwitcher = () => {
-	const {theme: isDarkmode, setTheme} = useTheme();
+	const {theme: isDarkmode, toggleTheme} = useTheme();
 	const duration = 0.7;
 
 	const moonVariants = {
@@ -32,9 +32,9 @@ const LightDarkSwitcher = () => {
 	return (
 		<div className="darkmode-switch">
 			<motion.button
-				onClick={() => setTheme(!isDarkmode)}
+				onClick={toggleTheme}
 				aria-label={isDarkmode ? 'Activate light mode' : 'Activate dark mode'}
-				animate={isDarkmode ? 'checked' : 'unchecked'}
+				animate={isDarkmode ? 'unchecked' : 'checked'}
 				transition={{duration}}
 				initial={false}
 				title="Theme toggle"
