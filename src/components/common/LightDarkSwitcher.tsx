@@ -3,7 +3,7 @@ import {motion, useMotionValue, useTransform} from 'framer-motion';
 import {useTheme} from '~/providers/ThemeProvider';
 
 const LightDarkSwitcher = () => {
-	const {theme: isDarkmode, toggleTheme} = useTheme();
+	const {dark: isDarkmode, toggleTheme} = useTheme();
 	const duration = 0.7;
 
 	const moonVariants = {

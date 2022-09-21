@@ -1,40 +1,101 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import {
+	createContext,
+	useContext,
+	useEffect,
+	useCallback,
+	useState,
+} from 'react';
 
 interface ThemeContextProps {
-	theme: boolean;
+	dark: boolean;
 	toggleTheme: () => void;
 }
 
-const ThemeProviderContext = createContext({} as ThemeContextProps);
+enum Theme {
+	LIGHT = 'light',
+	DARK = 'dark',
+}
 
-const ThemeProvider = ({children}: {children: React.ReactNode}) => {
-	const THEME = '_de_theme';
-	let darkmode = false;
+const defaultContextData = {
+	dark: false,
+	toggleTheme: () => {},
+};
 
-	if (typeof window !== 'undefined') {
-		darkmode = Boolean(localStorage.getItem(THEME)) ?? false;
-	}
+const THEME = 'mode';
 
-	const [theme, setTheme] = useState(darkmode);
+const ThemeProviderContext =
+	createContext<ThemeContextProps>(defaultContextData);
+export const useTheme = () => useContext(ThemeProviderContext);
 
-	const toggleTheme = () => {
-		localStorage.setItem(THEME, JSON.stringify(!theme));
-		setTheme(!theme);
+const storage = {
+	get: (init?: Theme) => window.localStorage.getItem(THEME) || init,
+	set: (value: Theme) => window.localStorage.setItem(THEME, value),
+};
+
+const supportsDarkMode = () =>
+	window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+const useDarkMode = (): [Theme, (theme?: Theme) => void] => {
+	const [themeState, setThemeState] = useState(Theme.DARK);
+
+	const setThemeStateEnhanced = (themeValue?: Theme) => {
+		setThemeState((prevState) => {
+			const nextState = themeValue
+				? themeValue
+				: prevState === Theme.LIGHT
+				? Theme.DARK
+				: Theme.LIGHT;
+
+			document.querySelector('html')?.classList.remove(prevState);
+			document.querySelector('html')?.classList.add(nextState);
+			document.documentElement.style.setProperty('color-scheme', nextState);
+			storage.set(nextState);
+
+			return nextState;
+		});
 	};
 
 	useEffect(() => {
-		if (theme) {
-			document.querySelector('html')?.classList.add('dark');
-		} else {
-			document.querySelector('html')?.classList.remove('dark');
+		const storedMode = storage.get();
+		if (!storedMode && supportsDarkMode()) {
+			return setThemeStateEnhanced(Theme.DARK);
 		}
-	}, [theme]);
+
+		if (!storedMode || storedMode === themeState) {
+			return;
+		}
+
+		setThemeStateEnhanced();
+	}, [themeState]);
+
+	return [themeState, setThemeStateEnhanced];
+};
+
+const ThemeProvider = ({children}: {children: React.ReactNode}) => {
+	const [themeState, setThemeStateEnhanced] = useDarkMode();
+
+	const toggleTheme = useCallback(() => {
+		setThemeStateEnhanced();
+	}, [setThemeStateEnhanced]);
+
+	useEffect(() => {
+		window
+			.matchMedia('(prefers-color-scheme: dark)')
+			.addEventListener('change', (e) => {
+				setThemeStateEnhanced(e.matches ? Theme.DARK : Theme.LIGHT);
+			});
+	}, [setThemeStateEnhanced, toggleTheme]);
+
 	return (
-		<ThemeProviderContext.Provider value={{theme, toggleTheme}}>
+		<ThemeProviderContext.Provider
+			value={{
+				dark: themeState === Theme.DARK,
+				toggleTheme,
+			}}
+		>
 			{children}
 		</ThemeProviderContext.Provider>
 	);
 };
 
-export const useTheme = () => useContext(ThemeProviderContext);
 export default ThemeProvider;

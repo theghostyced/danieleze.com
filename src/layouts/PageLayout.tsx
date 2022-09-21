@@ -1,6 +1,5 @@
 import type {FC} from 'react';
 import Head from 'next/head';
-import {useTheme} from '~/providers/ThemeProvider';
 import Header from '~/components/common/Header';
 
 export interface Props {
@@ -10,7 +9,6 @@ export interface Props {
 
 const PageLayout: FC<Props> = (props) => {
 	const {title, children} = props;
-	const {theme} = useTheme();
 
 	return (
 		<>
